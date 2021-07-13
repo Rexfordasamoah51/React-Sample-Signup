@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Helvetica Bold define local font */
+@font-face {
+  font-family: "Hel-Bold";
+  src: local("Helvetica Bold"), local("Helvetica-Bold"),
+    url("../src/assets/fonts/Helvetica-Bold.ttf") format("ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Helvetica light define local font */
+@font-face {
+  font-family: "Hel-light";
+  src: local("Helvetica light"), local("Helvetica-light"),
+    url("../src/assets/fonts/helvetica-light.ttf") format("ttf");
+}
+
+/* Helvetica  define local font */
+@font-face {
+  font-family: "Hel";
+  src: local("Helvetica"), local("Helvetica"),
+    url("../src/assets/fonts/Helvetica.ttf") format("ttf");
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none;
+}
+img {
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fade-enter-active{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-enter-active ,
+.fade-exit-active  {
+  transition: opacity 500ms, transform 500ms;
 }
